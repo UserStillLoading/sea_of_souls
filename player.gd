@@ -5,18 +5,18 @@ extends CharacterBody2D
 # working on this, so just give it
 # a bit of time, thanks
 
-var startSpeed = 300							# initial speed
+var startSpeed = 300								# initial speed
 var runSpeed = 450								# max speed (not yet in place)
 var jump = -400									  # power on jump
-var midJump = -1000								# power on second jump
-var bigJump = -600								# power on third jump
+var midJump = -600								# power on second jump
+var bigJump = -1000								# power on third jump
 var doMid = false						  		# do medium jump?
 var doBig = false							  	# do big jump?
 var gravity = 1000								# constand donwards force
-var sprite = Sprite2D							# not needed, but it looks better to me
+var sprite = Sprite2D								# not needed, but it looks better to me
 var wallJump = 200								# wall jump power
-@onready var rayCastLeftNode = $RayCastLeft		# left raycast node
-@onready var rayCastRightNode = $RayCastRight	# right raycast node
+@onready var rayCastLeftNode = $RayCastLeft					# left raycast node
+@onready var rayCastRightNode = $RayCastRight					# right raycast node
 
 func _physics_process(delta):
 # Movement system
@@ -39,7 +39,7 @@ func _process(delta):
 			if doMid == false and doBig == true:		# if you've jumped twice (resets)
 				velocity.y = bigJump
 				var doBig = false
-		else: 									              		# if player isn't on floor
+		else:							# if player isn't on floor
 			if rayCastLeftNode.is_colliding() or rayCastRightNode.is_colliding(): # check if wall jump possible
 				velocity.y = jump * 0.8
 			if rayCastLeftNode.is_colliding():
