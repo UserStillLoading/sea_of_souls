@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 var startSpeed = 300								# initial speed
 var runSpeed = 450								# max speed (not yet in place)
-var jump = -400									  # power on jump
+var jump = -400									# power on jump
 var midJump = -600								# power on second jump
 var bigJump = -1000								# power on third jump
 var doMid = false						  		# do medium jump?
